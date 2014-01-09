@@ -381,16 +381,16 @@
 	var nick = prompt("Podaj nick, jakiego chcesz używać w czacie i leaderboard(TODO)","Gracz");
 	if(nick)
 	{
-		if(nick.length<=10 && nick.length >1)
+		if(nick.length<=10 && nick.length >2)
 		Game.username = nick;
 		else
 		{
-		alert('Twój nick może mieć min 1 znak i max 10 znaków');
+		alert('Twój nick musi mieć min 2 znaki i max 10 znaków');
 		do
 		{
 		var nick = prompt("Podaj nick, jakiego chcesz używać w czacie i leaderboard(TODO)","Gracz");
-		if(nick.length<=10 && nick.length >1) alert('Twój nick może mieć min 1 znak i max 10 znaków');
-		}while(nick.length<=10 && nick.length >1);
+		if(nick.length>10 || nick.length <=2) alert('Twój nick musi mieć min 2 znaki i max 10 znaków');
+		}while(nick.length>10 || nick.length <=2);
 		Game.username = nick;
 		}
 		document.title = Game.title2;
