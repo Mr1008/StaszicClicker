@@ -397,7 +397,8 @@
 	}
 	else
 	{
-	location.reload();
+	alert('Twój nick musi mieć min 2 znaki i max 10 znaków');
+	Game.askNick();
 	}
 	
 	}
