@@ -1,6 +1,7 @@
 Staszic Clicker
 ========
 Simple web-based HTML5 & PHP clicker game.
+You can test it here: http://www.szymekminecraft.comxa.com/clicker
 
 REQUIREMENTS:
 * jQuery
