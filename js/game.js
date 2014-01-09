@@ -334,7 +334,7 @@
 	
 	this.counter = function()
 	{	
-	var uri = "usercount.php?result="+Game.result.toString();
+	var uri = "usercount.php?result="+Game.result.toString()+"&user="+Game.username;
 	$.ajax({
 	url: uri,
 	})
@@ -381,16 +381,16 @@
 	var nick = prompt("Podaj nick, jakiego chcesz używać w czacie i leaderboard(TODO)","Gracz");
 	if(nick)
 	{
-		if(nick.length<=10)
+		if(nick.length<=10 && nick.length >1)
 		Game.username = nick;
 		else
 		{
-		alert('Twój nick może mieć max 10 znaków');
+		alert('Twój nick może mieć min 1 znak i max 10 znaków');
 		do
 		{
 		var nick = prompt("Podaj nick, jakiego chcesz używać w czacie i leaderboard(TODO)","Gracz");
-		if(nick.length>10) alert('Twój nick może mieć max 10 znaków');
-		}while(nick.length>10);
+		if(nick.length<=10 && nick.length >1) alert('Twój nick może mieć min 1 znak i max 10 znaków');
+		}while(nick.length<=10 && nick.length >1);
 		Game.username = nick;
 		}
 		document.title = Game.title2;
@@ -409,6 +409,7 @@
 	this.setjQuery();
 	this.renderItems(); //Rysowanie sklepu
 	this.blurredHandle = 0;
+	document.title = Game.title2;
 	
 	window.addEventListener('focus', function() {
 	Game.active = true;
